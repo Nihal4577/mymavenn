@@ -2,8 +2,8 @@ node('built-in')
 {
    stage('ContinuousDownload')
    {
-        git 'https://github.com/Nihal4577/mymaven.git'
-       }
+        git 'https://github.com/Nihal4577/mymavenn.git'
+	}
      stage('ContinuousBuild')
      {
        sh 'mvn package'
