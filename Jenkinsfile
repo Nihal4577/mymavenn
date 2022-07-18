@@ -24,36 +24,5 @@ pipeline
                 }
             }
         }
-        stage('ContinousDeployment')
-        {
-            steps
-            {
-                script
-                {
-                  cicd.newDeploy("libraries2declaretivepipeline","172.31.88.78","testapp")
-                }
-            }
-        }
-        stage('ContinousTesting')
-        {
-            steps
-            {
-                script
-                {
-                    cicd.newGit("https://github.com/intelliqittrainings/FunctionalTesting.git")
-                    cicd.runSelenium("libraries2declaretivepipeline")
-                }
-            }
-        }
-        stage('ContinousDelivery')
-        {
-            steps
-            {
-                script
-                {
-                  cicd.newDeploy("libraries2declaretivepipeline","172.31.88.209","prodapp")
-                }
-            }
-        }
      }
 }
